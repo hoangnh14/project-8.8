@@ -41,7 +41,7 @@ export default function Chart() {
             type: 'column'
         },
         title: {
-            text: 'Total of products sold out'
+            text: 'Total of products sold out 2020'
         },
 
         xAxis: {

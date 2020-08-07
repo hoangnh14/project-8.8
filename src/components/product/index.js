@@ -10,7 +10,7 @@ import {apiUrl} from "../../constants/api";
 
 
 
-export default function ProductList() {
+export default function Index() {
     const [visible, setVisible] = useState(false);
     const [products, setProducts] = useState([]);
     const [productsDetail, setProductsDetail] = useState([]);

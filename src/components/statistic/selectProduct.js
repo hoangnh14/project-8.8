@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import apiUrls, {apiUrl} from "../../constants/api";
 import axios from "axios";
 import Select from "antd/es/select";
 import {Option} from "antd";
 import {useDispatch} from "react-redux";
-import statistic from "../../reducers/statistic";
 import {statisticByName} from "../../actions";
 
 
@@ -36,42 +34,17 @@ export default function SelectProduct() {
     }
 
 
-    function onBlur() {
-        console.log('blur');
-    }
 
-    function onFocus() {
-        console.log('focus');
-    }
-
-    function onSearch(val) {
-        console.log('search:', val);
-    }
     return (
         <div>
-            <Select
-                showSearch
-                style={{ width: 200 }}
-                placeholder="Select phone"
-                optionFilterProp="children"
-                onChange={onChange}
-                onFocus={onFocus}
-                onBlur={onBlur}
-                onSearch={onSearch}
-                defaultValue={productName}
-
-
-                filterOption={(input, option) =>
-                    option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                }
-            >
+            <Select defaultValue={productName} style={{ width: 180 }} onChange={onChange}>
                 {products.map( product =>
                     <Option value={product.name}>{product.name} {onChange(product.name)}</Option>
 
                 )}
 
-
             </Select>
+
         </div>
     )
 };
